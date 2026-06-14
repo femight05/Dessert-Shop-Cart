@@ -1,0 +1,25 @@
+const ProductListings = ({ products }) => {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-5">
+      {products.map((product) => (
+        <div className="relative">
+          <img
+            src={product.image.desktop}
+            alt={product.name}
+            className="w-52 h-52 -z-50 rounded-md"
+          />
+          <button className="border w-2/3 text-center absolute cursor-pointer block mx-auto tracking-wide left-8 font-semibold bottom-25 text-sm z-50 bg-white border-gray-500 rounded-3xl px-3 py-2">
+            Add to Cart
+          </button>
+          <div className="pt-10 space-y-0.5">
+            <p className="text-gray-400">{product.category}</p>
+            <h1 className="font-semibold">{product.name}</h1>
+            <p className="text-red-600">${product.price}.00</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default ProductListings;
