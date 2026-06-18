@@ -1,4 +1,4 @@
-const ProductListings = ({ products }) => {
+const ProductListings = ({ products, onAddtoCart }) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-5">
       {products.map((product) => (
@@ -8,7 +8,12 @@ const ProductListings = ({ products }) => {
             alt={product.name}
             className="w-60 h-52 -z-50 rounded-md"
           />
-          <button className="border w-2/3 text-center absolute cursor-pointer flex justify-center gap-2 items-center  mx-auto tracking-wide left-8 font-semibold bottom-25 text-sm z-50 bg-white border-gray-500 rounded-3xl px-3 py-2 hover:border-orange-700 hover:text-orange-700">
+          <button
+            onClick={() => {
+              onAddtoCart(product);
+            }}
+            className="border w-2/3 text-center absolute cursor-pointer flex justify-center gap-2 items-center  mx-auto tracking-wide left-8 font-semibold bottom-25 text-sm z-50 bg-white border-gray-500 rounded-3xl px-3 py-2 hover:border-orange-700 hover:text-orange-700"
+          >
             <img src="/images/icon-add-to-cart.svg" />
             Add to Cart
           </button>

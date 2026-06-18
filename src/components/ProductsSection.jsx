@@ -1,11 +1,11 @@
 import ProductListings from "./ProductListings";
 import Data from "../data.json";
-const ProductsSection = () => {
+const ProductsSection = ({ onAddtoCart }) => {
   return (
     <div className="space-y-2">
       <h1 className="text-4xl font-bold mx-1 my-2">Desserts</h1>
       <div>
-        <ProductListings products={Data} />
+        <ProductListings products={Data} onAddtoCart={onAddtoCart} />
       </div>
     </div>
   );
