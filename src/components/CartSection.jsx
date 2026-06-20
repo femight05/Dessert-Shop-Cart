@@ -8,10 +8,22 @@ const CartSection = ({ cartItem }) => {
       </h1>
       {isTrue ? (
         cartItem.map((cart) => (
-          <div key={cart.id} className="p-1 mt-5 space-y-1 px-3">
-            <p className="font-semibold text-sm">{cart.name}</p>
-            <small className="mb-2">ID: {cart.id}</small>
-            <hr className="text-gray-200 mt-2" />
+          <div
+            key={cart.id}
+            className="p-1 flex items-center justify-between mt-5 space-y-1 px-3"
+          >
+            <div>
+              <p className="font-semibold text-sm">{cart.name}</p>
+              <small className="mb-2">ID: {cart.id}</small>
+              <hr className="text-gray-200 mt-2 w-full" />
+            </div>
+            <div>
+              <img
+                src="/images/icon-remove-item.svg"
+                alt="remove item icon"
+                className="border rounded-full border-gray-300 cursor-pointer hover:border-orange-600  p-0.5"
+              />
+            </div>
           </div>
         ))
       ) : (
