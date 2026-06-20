@@ -12,7 +12,7 @@ const ProductListings = ({ products, onAddtoCart }) => {
             onClick={() => {
               onAddtoCart(product);
             }}
-            className="border w-2/3 text-center absolute cursor-pointer flex justify-center gap-2 items-center  mx-auto tracking-wide left-8 font-semibold bottom-25 text-sm z-50 bg-white border-gray-500 rounded-3xl px-3 py-2 hover:border-orange-700 hover:text-orange-700"
+            className="border w-2/3 text-center absolute cursor-pointer flex justify-center flex-0 gap-2 items-center tracking-wide left-8 font-semibold bottom-25 text-sm z-50 bg-white border-gray-500 rounded-3xl px-3 py-2 hover:border-orange-700 hover:text-orange-700"
           >
             <img src="/images/icon-add-to-cart.svg" />
             Add to Cart

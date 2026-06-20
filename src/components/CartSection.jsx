@@ -1,16 +1,17 @@
 const CartSection = ({ cartItem }) => {
-  let isTrue = true;
+  let isTrue = cartItem.length !== 0;
   return (
-    <div className="bg-white p-6 space-y-5 rounded-xl self-start">
-      <h1 className="text-2xl font-bold text-orange-700">
+    <div className="bg-white p-6 space-y-2 md:w-80 rounded-xl self-start">
+      <h1 className="text-xl md:text-3xl font-bold px-3 text-orange-700">
         {" "}
-        Your Cart (<span>0</span>){" "}
+        Your Cart (<span>{cartItem.length}</span>){" "}
       </h1>
       {isTrue ? (
         cartItem.map((cart) => (
-          <div key={cart.name} className="p-12">
-            <p>{cart.name}</p>
-            <small>ID: {cart.name}</small>
+          <div key={cart.id} className="p-1 mt-5 space-y-1 px-3">
+            <p className="font-semibold text-sm">{cart.name}</p>
+            <small className="mb-2">ID: {cart.id}</small>
+            <hr className="text-gray-200 mt-2" />
           </div>
         ))
       ) : (
