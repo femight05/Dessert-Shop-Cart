@@ -18,6 +18,9 @@ const CartSection = ({ cartItem, handleRemove }) => {
               <div className="mt-1 flex items-center gap-3">
                 <p className="text-xs text-orange-500">{cart.quantity}x</p>
                 <p className="text-xs text-gray-400">@{cart.price}.00</p>
+                <p className="text-xs text-gray-400">
+                  @{cart.price * cart.quantity}.00
+                </p>
               </div>
               <hr className="text-gray-200 mt-2 w-full" />
             </div>
