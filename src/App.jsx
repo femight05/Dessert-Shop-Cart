@@ -10,11 +10,15 @@ const App = () => {
     setCart([...cart, product]);
   }
 
+  function handleRemoveItems(id) {
+    setCart(cart.filter((a) => a.id !== id));
+  }
+
   return (
     <div>
       <ProductCart>
         <ProductsSection onAddtoCart={handleAddtoCart} />
-        <CartSection cartItem={cart} />
+        <CartSection cartItem={cart} handleRemove={handleRemoveItems} />
       </ProductCart>
     </div>
   );

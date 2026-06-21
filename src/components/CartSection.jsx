@@ -1,5 +1,6 @@
-const CartSection = ({ cartItem }) => {
+const CartSection = ({ cartItem, handleRemove }) => {
   let isTrue = cartItem.length !== 0;
+
   return (
     <div className="bg-white p-6 space-y-2 md:w-80 rounded-xl self-start">
       <h1 className="text-xl md:text-3xl font-bold px-3 text-orange-700">
@@ -14,10 +15,13 @@ const CartSection = ({ cartItem }) => {
           >
             <div>
               <p className="font-semibold text-sm">{cart.name}</p>
-              <small className="mb-2">ID: {cart.id}</small>
+              <div className="mt-1 flex items-center gap-3">
+                <p className="text-xs text-orange-500">{cart.quantity}x</p>
+                <p className="text-xs text-gray-400">@{cart.price}.00</p>
+              </div>
               <hr className="text-gray-200 mt-2 w-full" />
             </div>
-            <div>
+            <div onClick={() => handleRemove(cart.id)}>
               <img
                 src="/images/icon-remove-item.svg"
                 alt="remove item icon"
