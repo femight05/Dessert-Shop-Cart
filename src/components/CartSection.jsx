@@ -1,6 +1,9 @@
 const CartSection = ({ cartItem, handleRemove }) => {
   let isTrue = cartItem.length !== 0;
 
+  let totalNum = cartItem.reduce((total, item) => {
+    return total + item.price * item.quantity;
+  }, 0);
   return (
     <div className="bg-white p-6 space-y-2 md:w-80 rounded-xl self-start">
       <h1 className="text-xl md:text-3xl font-bold px-3 text-orange-700">
@@ -44,6 +47,14 @@ const CartSection = ({ cartItem, handleRemove }) => {
             {" "}
             Your Items will appear here
           </p>
+        </div>
+      )}
+      {isTrue && (
+        <div className="flex justify-between items-center py-5">
+          <h1 className="font-bold mt-2 text-gray-700 tracking-wide">
+            Order Total :
+          </h1>
+          <p className="font-bold text-3xl">${totalNum}.00</p>
         </div>
       )}
     </div>
