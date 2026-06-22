@@ -57,6 +57,18 @@ const CartSection = ({ cartItem, handleRemove }) => {
           <p className="font-bold text-3xl">${totalNum}.00</p>
         </div>
       )}
+      {isTrue && (
+        <div className="flex flex-col justify-center items-center gap-5">
+          {" "}
+          <p className="flex py-3 bg-gray-100 px-4 text-xs gap-1 rounded-md">
+            <img src="images/icon-carbon-neutral.svg" alt="confirm order" />{" "}
+            This is a carbon-neutral delivery
+          </p>{" "}
+          <button className="text-white bg-orange-700 rounded-2xl px-20 cursor-pointer hover:bg-orange-900 py-2">
+            Confirm Order
+          </button>
+        </div>
+      )}
     </div>
   );
 };
