@@ -1,4 +1,4 @@
-const CartSection = ({ cartItem, handleRemove }) => {
+const CartSection = ({ cartItem, handleRemove, handleConfirm }) => {
   let isTrue = cartItem.length !== 0;
 
   let totalNum = cartItem.reduce((total, item) => {
@@ -64,7 +64,10 @@ const CartSection = ({ cartItem, handleRemove }) => {
             <img src="images/icon-carbon-neutral.svg" alt="confirm order" />{" "}
             This is a carbon-neutral delivery
           </p>{" "}
-          <button className="text-white bg-orange-700 rounded-2xl px-20 cursor-pointer hover:bg-orange-900 py-2">
+          <button
+            onClick={handleConfirm}
+            className="text-white bg-orange-700 rounded-2xl px-20 cursor-pointer hover:bg-orange-900 py-2"
+          >
             Confirm Order
           </button>
         </div>
