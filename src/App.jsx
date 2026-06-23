@@ -16,7 +16,11 @@ const App = () => {
     setCart(cart.filter((a) => a.id !== id));
   }
 
-  function handleConfrimOrder() {
+  function handleConfirmOrder() {
+    setShowOrderConfirm(!showOrderConfirm);
+  }
+  function handleStartNewOrder() {
+    setCart([]);
     setShowOrderConfirm(!showOrderConfirm);
   }
 
@@ -27,10 +31,12 @@ const App = () => {
         <CartSection
           cartItem={cart}
           handleRemove={handleRemoveItems}
-          handleConfirm={handleConfrimOrder}
+          handleConfirm={handleConfirmOrder}
         />
       </ProductCart>
-      {showOrderConfirm && <OrderConfirm cartItem={cart} />}
+      {showOrderConfirm && (
+        <OrderConfirm cartItem={cart} handleNewOrder={handleStartNewOrder} />
+      )}
     </div>
   );
 };

@@ -1,4 +1,4 @@
-const OrderConfirm = ({ cartItem }) => {
+const OrderConfirm = ({ cartItem, handleNewOrder }) => {
   let totalNum = cartItem.reduce((total, item) => {
     return total + item.price * item.quantity;
   }, 0);
@@ -45,6 +45,12 @@ const OrderConfirm = ({ cartItem }) => {
           </h1>
           <p className="font-bold text-3xl">${totalNum}.00</p>
         </div>
+        <button
+          onClick={handleNewOrder}
+          className="text-white bg-orange-700 rounded-2xl px-20 w-full mt-5 cursor-pointer hover:bg-orange-900 py-2"
+        >
+          Start New Order
+        </button>
       </div>
     </div>
   );
