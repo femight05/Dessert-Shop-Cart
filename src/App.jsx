@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ProductCart from "./components/ProductCart";
 import ProductsSection from "./components/ProductsSection";
 import CartSection from "./components/CartSection";
@@ -7,6 +7,16 @@ import OrderConfirm from "./components/OrderConfirm";
 const App = () => {
   const [cart, setCart] = useState([]);
   const [showOrderConfirm, setShowOrderConfirm] = useState(false);
+
+  useEffect(() => {
+    if (showOrderConfirm) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => (document.body.style.overflow = "auto");
+  }, [showOrderConfirm]);
 
   function handleAddtoCart(product) {
     setCart([...cart, product]);
