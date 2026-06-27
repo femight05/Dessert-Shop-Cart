@@ -5,7 +5,7 @@ const OrderConfirm = ({ cartItem, handleNewOrder }) => {
 
   return (
     <div className="fixed inset-0 z-99 flex items-center justify-center bg-black/50 p-4">
-      <div className="bg-white p-5 rounded-md space-y-4 w-full max-w-2xl max-h-[90vh] overflow-hidden">
+      <div className="bg-white p-10 rounded-md space-y-4 w-full max-w-xl max-h-[90vh] overflow-y-auto">
         <div className="space-y-4">
           <img
             src="images/icon-order-confirmed.svg"
@@ -54,7 +54,7 @@ const OrderConfirm = ({ cartItem, handleNewOrder }) => {
           </div>
           <button
             onClick={handleNewOrder}
-            className="text-white bg-orange-700 rounded-2xl px-20 w-full cursor-pointer hover:bg-orange-900 py-2"
+            className="text-white text-center text-xs md:text-xl bg-orange-700 rounded-2xl px-20 w-full cursor-pointer hover:bg-orange-900 py-2"
           >
             Start New Order
           </button>
