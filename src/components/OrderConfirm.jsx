@@ -54,7 +54,7 @@ const OrderConfirm = ({ cartItem, handleNewOrder }) => {
           </div>
           <button
             onClick={handleNewOrder}
-            className="text-white text-center text-xs md:text-xl bg-orange-700 rounded-2xl px-20 w-full cursor-pointer hover:bg-orange-900 py-2"
+            className="text-white text-center text-xs md:text-sm bg-orange-700 rounded-2xl px-20 w-full cursor-pointer hover:bg-orange-900 py-2"
           >
             Start New Order
           </button>
