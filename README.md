@@ -8,7 +8,7 @@ A responsive dessert shopping cart application built with React. Users can brows
 
 ## 🚀 Live Demo
 
-- **Live Site:** Not yet deployed...still working on the bugs
+- **Live Site:** **https://dessertshopcart.vercel.app/**
 - **Repository:** **https://github.com/femight05/Dessert-Shop-Cart**
 
 ## ✨ Features
